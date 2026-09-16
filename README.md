@@ -6,7 +6,7 @@ The project focuses on building a lightweight ML pipeline that can be integrated
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Driver drowsiness is a major road-safety concern, particularly during long-duration driving and low-attention conditions.
 
@@ -34,7 +34,7 @@ The final implementation is intended to run on **Raspberry Pi with QNX Neutrino 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Detect whether the driver is **awake or sleepy**.
 * Develop a lightweight CNN suitable for edge deployment.
@@ -47,7 +47,7 @@ The final implementation is intended to run on **Raspberry Pi with QNX Neutrino 
 
 ---
 
-## 🧠 Machine Learning
+##  Machine Learning
 
 ### Classification Classes
 
@@ -76,11 +76,7 @@ ONNX Export
 Edge Deployment
 ```
 
-### Model Input
 
-```text
-64 × 64 grayscale image
-```
 
 ### Model Output
 
@@ -131,7 +127,7 @@ The complete dataset is **not stored in this repository** because of its size.
 
 ### Embedded / Hardware
 
-* Raspberry Pi 4
+* Raspberry Pi 5
 * Camera module / compatible camera input
 
 ### Real-Time Operating System
@@ -194,83 +190,6 @@ The **Decision Task** is designed to receive higher priority because timely drow
 
 ---
 
-## 🗂️ Repository Structure
-
-```text
-QNX-Drowsiness-Detection/
-│
-├── models/
-│   ├── cascades/
-│   │   ├── haarcascade_eye.xml
-│   │   ├── haarcascade_frontalface_alt2.xml
-│   │   ├── haarcascade_frontalface_default.xml
-│   │   └── haarcascade_profileface.xml
-│   │
-│   ├── drowsiness_cnn.onnx
-│   └── lbfmodel.yaml
-│
-├── src/
-│   ├── driver_drowsiness_integrated.py
-│   └── test_webcam.py
-│
-├── .gitignore
-├── .gitattributes
-└── README.md
-```
-
----
-
-## 🔬 Current Implementation
-
-### Completed
-
-* [x] Drowsiness dataset preparation
-* [x] CNN model training
-* [x] Model evaluation
-* [x] ONNX model export
-* [x] Computer-vision preprocessing pipeline
-* [x] Face and eye detection components
-* [x] Python inference/testing pipeline
-* [x] GitHub repository setup
-* [x] Git LFS integration for large model files
-
-### In Progress
-
-* [ ] Raspberry Pi camera integration
-* [ ] QNX deployment
-* [ ] Real-time task implementation
-* [ ] Message queue integration
-* [ ] Shared-buffer pipeline
-* [ ] Deadline and CPU-budget configuration
-* [ ] Real-time latency measurements
-* [ ] Driver alert mechanism
-* [ ] End-to-end QNX testing
-
----
-
-## 🚀 Deployment Target
-
-The target deployment platform is:
-
-```text
-Hardware:
-Raspberry Pi 4
-
-Operating System:
-QNX Neutrino RTOS
-
-ML Runtime:
-ONNX-based inference pipeline
-
-Input:
-Driver camera feed
-
-Output:
-Drowsiness state + alert
-```
-
----
-
 ## 📈 Performance Evaluation
 
 The final system will be evaluated using real-time metrics such as:
@@ -290,83 +209,4 @@ These measurements will be collected after integration with the Raspberry Pi and
 
 ---
 
-## 🔮 Future Development
-
-The current binary classifier provides the foundation for a broader driver-attention monitoring system.
-
-Future versions can incorporate:
-
-* Eye closure / eye movement analysis
-* Yawning detection
-* Head movement and head-nod detection
-* Attention monitoring
-* Multi-feature drowsiness scoring
-* Real-time dashboard
-* Driver alert history
-* Additional sensor inputs
-* Hardware-level optimization
-* Quantized / optimized ML inference
-
-A possible future decision pipeline is:
-
-```text
-Eye State ───────┐
-                 │
-Yawning ─────────┤
-                 ├──► Attention / Drowsiness
-Head Movement ───┤        Decision
-                 │
-Other Features ──┘
-                       │
-                       ▼
-                  Alert System
-```
-
----
-
-## 🛠️ Running the Python Pipeline
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Ilakiyaa2505/QNX-Drowsiness-Detection.git
-cd QNX-Drowsiness-Detection
-```
-
-Install the required Python dependencies according to the development environment.
-
-The available scripts include:
-
-```text
-src/driver_drowsiness_integrated.py
-src/test_webcam.py
-```
-
-The ONNX model is located at:
-
-```text
-models/drowsiness_cnn.onnx
-```
-
-> **Note:** The QNX deployment pipeline is currently under development. The repository contains the ML and computer-vision components being prepared for integration with the QNX real-time environment.
-
----
-
-## 📚 Project Focus
-
-This project combines three major areas:
-
-```text
-Computer Vision
-       +
-Machine Learning
-       +
-Real-Time Systems
-       =
-QNX Driver Drowsiness & Attention Monitoring
-```
-
-The primary engineering challenge is not only detecting drowsiness accurately, but also achieving **predictable real-time processing and alert response** on an embedded QNX platform.
-
----
 
