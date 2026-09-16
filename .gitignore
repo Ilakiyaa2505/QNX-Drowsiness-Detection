@@ -1,4 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
 
+# Datasets
+Driver-Drowsiness-Detection/
+
+# Large model files
+*.h5
+*.onnx
+
+# OS / IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
 # Dataset
 Eye dataset (2).zip
 *.zip
